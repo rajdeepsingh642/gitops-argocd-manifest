@@ -17,7 +17,7 @@ spec:
   spec:
    containers:
     - image: rajdeepsingh642/gitops-argocd-project
-      name: flaskdemo
+      name: gitops
 
           
 
