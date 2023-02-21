@@ -18,10 +18,12 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: raj80dockerid/test:6
-        name: flaskdemo
-        resources: {}
-status: {}
+      - image: rajdeepsingh642/gitops-argocd-project
+         name: flaskdemo
+
+
+
+
 ---
 apiVersion: v1
 kind: Service
@@ -30,9 +32,10 @@ metadata:
   labels:
     app: lb-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 80
     targetPort: 5000
+    nodePort: 50003
   selector:
     app: flaskdemo
